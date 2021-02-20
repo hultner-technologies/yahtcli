@@ -1,18 +1,24 @@
-from auto_name_enum import AutoNameEnum
+from typing import Tuple
+from enum import IntEnum
 
 
-class Dice(AutoNameEnum):
+class Dice(IntEnum):
     """
     Six sided classic dice.
     ⚀ ⚁ ⚂ ⚃ ⚄ ⚅
     """
-    one = auto()
-    two = auto()
-    three = auto()
-    four = auto()
-    five = auto()
-    six = auto()
 
+    one = 1
+    two = 2
+    three = 3
+    four = 4
+    five = 5
+    six = 6
+
+
+Roll = Tuple[
+    Dice, Dice, Dice, Dice, Dice,
+]
 
 dice_characters = {
     Dice.one: "⚀",
